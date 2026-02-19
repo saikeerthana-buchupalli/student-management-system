@@ -31,6 +31,12 @@ public static void main(String[] args){
         manager.viewAllStudents();
         break;
       case 3:
+        System.out.println("Enter ID to delete: ");
+        int deleteId = sc.nextInt();
+        sc.nextLine();
+        manager.deleteStudent(deleteId);
+        break;
+      case 4:
         System.out.println("Exiting program...");
         sc.close();
         return;
