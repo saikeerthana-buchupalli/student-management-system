@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 public class StudentManager{
   private ArrayList<Student> students;
 
@@ -19,9 +19,22 @@ public void viewAllStudents(){
     System.out.println("No students found.");
     return;
   }
-
   for(Student student : students){
     student.displayStudent();
   }
+}
+
+  // Delete student by ID
+  public void deleteStudent(int id){
+    Iterator<Student> iterator = students.iterator();
+  while(iterator.hasNext()){
+    Student student = iterator.next();
+    if(student.getId() == id){
+      iterator.remove();
+      System.out.println("Student deleted successfully.");
+      return;
+    }
+  }
+  System.out.println("Student not found.");
 }
 }
