@@ -49,4 +49,17 @@ public void viewAllStudents(){
     }
     System.out.println("Student not found.");
   }
+
+  // Update student by ID
+  public void updateStudent(int id, String name, int age, String course){
+    for(Student student : students){
+      if(student.getId() == id){
+        student.setName(name);
+        student.setAge(age);
+        student.setCourse(course);
+        System.out.println("Student updated successfully.");
+        return;
+      }
+    }
+    System.out.println("Student not found.");
 }
