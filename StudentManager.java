@@ -37,4 +37,16 @@ public void viewAllStudents(){
   }
   System.out.println("Student not found.");
 }
+
+  // Search student by ID
+  public void searchStudent(int id){
+    for (Student student : students){
+      if(student.getId() == id){
+        System.out.println("Student found:");
+        student.displayStudent();
+        return;
+      }
+    }
+    System.out.println("Student not found.");
+  }
 }
