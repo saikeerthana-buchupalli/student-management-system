@@ -9,6 +9,12 @@ public StudentManager() {
 
 //Add student
 public void addStudent(Student student){
+  for(Student s : students){
+    if(s.getId() == student.getId()){
+      System.out.println("Student with this ID already exists.");
+      return;
+    }
+  }
   students.add(student);
   System.out.println("Student added successfully.");
 }
